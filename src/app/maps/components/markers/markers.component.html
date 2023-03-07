@@ -4,9 +4,9 @@
   </li>
   <li
     class="list-group-item"
-    (click)="goToMarker(marker.marker)"
     *ngFor="let marker of arrayOfMarkers; let i = index"
     [ngStyle]="{ 'background-color': marker.color }"
+    (click)="goToMarker(marker.marker!)"
   >
     marker {{ i + 1 }}
   </li>
