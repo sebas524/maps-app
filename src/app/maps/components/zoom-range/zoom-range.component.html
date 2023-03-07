@@ -1,0 +1,26 @@
+<div #map class="map-container"></div>
+
+<div class="row">
+  <div class="col-12 form-label">
+    <label
+      >zoom:{{ zoomAmount | number : "2.0-2" }} -- longitude,latitude: [{{
+        center[0] | number : "2.4-4"
+      }},{{ center[1] | number : "2.4-4" }}]</label
+    >
+    <!-- ! range: -->
+    <label for="customRange1" class="form-label">Example range</label>
+    <input
+      type="range"
+      class="form-range"
+      [value]="zoomAmount"
+      min="0"
+      max="18"
+      (input)="zoomChange(zoomInput.value)"
+      #zoomInput
+    />
+  </div>
+  <div class="col-12 form-label">
+    <button class="btn btn-primary" (click)="zoomOut()">-</button>
+    <button class="btn btn-primary float-end" (click)="zoomIn()">+</button>
+  </div>
+</div>
